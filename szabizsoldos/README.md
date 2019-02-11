@@ -1,0 +1,1 @@
+Szabi Zsoldos exercise folder
