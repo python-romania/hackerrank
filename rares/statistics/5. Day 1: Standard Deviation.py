@@ -13,7 +13,7 @@
 #
 # <=> sigma = sqrt(mean((g o f)(xi), i = 1..n)) <=> 
 #
-# <=> sigma = mean((g o f)(xi), i = 1..n)^(1/2) 
+# <=> sigma = mean((g o f)(xi), i = 1..n)^(1/2) <=>
 # 
 # <=> Line 39
 
