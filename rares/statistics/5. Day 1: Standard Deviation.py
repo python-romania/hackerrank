@@ -28,7 +28,7 @@ def apply(f: Callable, *args, **kwargs):
     return f(*args, **kwargs)
 
 
-def flip(f):
+def flip(f: Callable) -> Callable:
     def f_(*args, **kwargs):
         return f(*args[::-1], **kwargs)
     return f_
