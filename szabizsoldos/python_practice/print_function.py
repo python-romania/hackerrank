@@ -1,3 +1,10 @@
-number = int(input())
+cars = {
+        'dacia': 'Duster',
+        'skoda': 'Kodiaq',
+        'ford': 'Focus'
+}
 
-print(*range(1, number+1), sep='')
+def foo(dacia, skoda, ford):
+    print("First car ", dacia, ", second car ", skoda, ", third car ", ford, sep='')
+
+foo(**cars)
