@@ -25,6 +25,9 @@
   
   ## Useful resources
   
+  - https://www.w3schools.com/python/
   - https://www.hackerrank.com
+  - https://medium.com/search?q=python&ref=opensearch
+  - https://www.tutorialspoint.com/tutorialslibrary.htm - Python section
 
 > Moto: Knowledge is to be shared
