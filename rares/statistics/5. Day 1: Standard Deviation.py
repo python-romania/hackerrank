@@ -15,7 +15,7 @@
 #
 # <=> sigma = mean((g o f)(xi), i = 1..n)^(1/2) <=>
 # 
-# <=> Line 39
+# <=> Line 58
 
 import sys
 from statistics import mean
