@@ -1,48 +1,45 @@
-total_integers = int(input())
-integer_list = input()
-integer_list_collection = list(map(int, integer_list.split()))
+input_nums = int(input())
+raw_nums = input()
+input_nums_list = list(map(int, raw_nums.split()))
 
-def calculate_median(numbers):
-    median = 0
-    half = 0
 
-    if(len(numbers) > 0):
-        numbers.sort()
+def median_func(nums_list):
+    if nums_list:
+        nums_list.sort()
 
-        if len(numbers) % 2 == 0:
-            half = int(len(numbers) / 2)
-            median = int(numbers[half - 1]) + int(numbers[half])
+        if len(nums_list) % 2 == 0:
+            half = int(len(nums_list) / 2)
+            median = int(nums_list[half - 1]) + int(nums_list[half])
             median = median / 2
         else:
-            median = int(numbers[int(len(numbers) / 2)])
-
-    return round(median, 1)
-
-def calculate_quartiles(total_integers, integer_list_collection):
-
-    if total_integers != None and total_integers > 0:
-
-        sorted_list = sorted(integer_list_collection)
-
-        if(total_integers % 2 == 1):
-            q2 = int(calculate_median(integer_list_collection))
-            q1 = int(calculate_median(integer_list_collection[0:integer_list_collection.index(q2)]))
-            q3 = int(calculate_median(integer_list_collection[integer_list_collection.index(q2)+1:]))
-
-        else:
-            lower_half = sorted_list[0:int(len(sorted_list) / 2)]
-            upper_half = sorted_list[int(len(sorted_list) / 2):]
-
-            q2 = int(calculate_median(sorted_list))
-            q1 = int(calculate_median(lower_half))
-            q3 = int(calculate_median(upper_half))
-
-        # Print is enough after the if/else statement, code refactoring
-        print(q1)
-        print(q2)
-        print(q3)
+            median = int(nums_list[int(len(nums_list) / 2)])
+        return round(median, 1)
     else:
         return None
 
 
-calculate_quartiles(total_integers, integer_list_collection)
+def quartiles(total_nums, nums_list):
+    if total_nums and nums_list and len(nums_list) > 0:
+        sorted_list = sorted(nums_list)
+
+        if total_nums % 2 == 1:
+            q2 = int(median_func(nums_list))
+            q1 = int(median_func(nums_list[0:nums_list.index(q2)]))
+            q3 = int(median_func(nums_list[nums_list.index(q2)+1:]))
+        else:
+            lower_half = sorted_list[0:int(len(sorted_list) / 2)]
+            upper_half = sorted_list[int(len(sorted_list) / 2):]
+
+            q2 = int(median_func(sorted_list))
+            q1 = int(median_func(lower_half))
+            q3 = int(median_func(upper_half))
+
+    else:
+        q1, q2, q3 = None, None, None
+
+    return {'q1': q1, 'q2': q2, 'q3': q3}
+
+
+quartiles = quartiles(input_nums, input_nums_list)
+for quartile in quartiles.values():
+    print(quartile)
