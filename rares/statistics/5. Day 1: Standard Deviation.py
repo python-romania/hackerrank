@@ -34,6 +34,13 @@ def flip(f):
     return f_
 
 
+def compose(f: Callable, g: Callable, *fs: Tuple[Callable, ...]) -> Callable:
+    funcs = fs[::-1] + (g, f)
+    def f_(*args, **kwargs):
+        return reduce(flip(apply), funcs[1:], funcs[0](*args, **kwargs))
+    return f_
+
+
 def sub(y: float) -> Callable[[float], float]:
     def sub_(x: float) -> float:
         return x - y
@@ -42,13 +49,6 @@ def sub(y: float) -> Callable[[float], float]:
 
 def sqr(x: float) -> float:
     return x ** 2
-
-
-def compose(f: Callable, g: Callable, *fs: Tuple[Callable, ...]) -> Callable:
-    funcs = fs[::-1] + (g, f)
-    def f_(*args, **kwargs):
-        return reduce(flip(apply), funcs[1:], funcs[0](*args, **kwargs))
-    return f_
 
 
 n, *nums = [int(num)
