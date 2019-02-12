@@ -13,9 +13,9 @@
 #
 # <=> sigma = sqrt(mean((g o f)(xi), i = 1..n)) <=> 
 #
-# <=> sigma = mean((g o f)(xi), i = 1..n)^(1/2) 
+# <=> sigma = mean((g o f)(xi), i = 1..n)^(1/2) <=>
 # 
-# <=> Line 39
+# <=> Line 58
 
 import sys
 from statistics import mean
@@ -28,9 +28,16 @@ def apply(f: Callable, *args, **kwargs):
     return f(*args, **kwargs)
 
 
-def flip(f):
+def flip(f: Callable) -> Callable:
     def f_(*args, **kwargs):
         return f(*args[::-1], **kwargs)
+    return f_
+
+
+def compose(f: Callable, g: Callable, *fs: Tuple[Callable, ...]) -> Callable:
+    funcs = fs[::-1] + (g, f)
+    def f_(*args, **kwargs):
+        return reduce(flip(apply), funcs[1:], funcs[0](*args, **kwargs))
     return f_
 
 
@@ -42,13 +49,6 @@ def sub(y: float) -> Callable[[float], float]:
 
 def sqr(x: float) -> float:
     return x ** 2
-
-
-def compose(f: Callable, g: Callable, *fs: Tuple[Callable, ...]) -> Callable:
-    funcs = fs[::-1] + (g, f)
-    def f_(*args, **kwargs):
-        return reduce(flip(apply), funcs[1:], funcs[0](*args, **kwargs))
-    return f_
 
 
 n, *nums = [int(num)
