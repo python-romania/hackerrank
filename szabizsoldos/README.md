@@ -12,7 +12,7 @@
 ## Statistics
 - [ ] Evolve in statistics from https://www.hackerrank.com
   - [x] Day 0
-  - [ ] Day 1
+  - [x] Day 1
   - [ ] Day 2
   - [ ] Day 3
   - [ ] Day 4
