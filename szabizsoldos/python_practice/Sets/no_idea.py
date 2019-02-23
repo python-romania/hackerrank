@@ -1,10 +1,10 @@
 from collections import Counter
 
 
-nums, n = list(map(int, str(input()).split())), list(map(int, str(input()).split()))
+nums, n = list(map(int, input().split())), list(map(int, input().split()))
 ncnt = Counter(n)
-a = set(map(int, str(input()).split()))
-b = set(map(int, str(input()).split()))
+a = set(map(int, input().split()))
+b = set(map(int, input().split()))
 happiness = 0
 
 for i in a:
@@ -12,12 +12,12 @@ for i in a:
         nr = ncnt.get(i)
         happiness += nr
 for i in b:
-    if i in n:
+    if i in ncnt:
         nr = ncnt.get(i)
         happiness -= nr
 
 print(happiness)
-
+#
 # same as above
 
 n, m = input().split()
