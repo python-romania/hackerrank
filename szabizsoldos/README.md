@@ -2,7 +2,10 @@
 
 - [ ] Learn the basics of Python
   - [x] Operators
-  - [ ] Lists, Collections
+  - [x] Lists
+  - [x] Sets
+  - [x] Date & Calendar
+  - [ ] Collections
   - [ ] Standard libraries
   - [ ] Popular libraries
 - [ ] Learn about database connections
