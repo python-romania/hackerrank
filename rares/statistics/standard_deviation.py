@@ -11,10 +11,10 @@
 #
 # <=> mean((g o f)(xi), i = 1..n) = sigma^2 <=>
 #
-# <=> sigma = sqrt(mean((g o f)(xi), i = 1..n)) <=> 
+# <=> sigma = sqrt(mean((g o f)(xi), i = 1..n)) <=>
 #
 # <=> sigma = mean((g o f)(xi), i = 1..n)^(1/2) <=>
-# 
+#
 # <=> Line 58
 
 import sys

@@ -12,7 +12,7 @@ def c(n: int, k: int) -> int:
 
 
 def pb_binom(k: int, n: int, p: float) -> float:
-    return c(n, k) * (p ** k) * ((1 - p) ** (n - k)) 
+    return c(n, k) * (p ** k) * ((1 - p) ** (n - k))
 
 
 prop_m, prop_f = list(map(float, sys.stdin.read().split()))

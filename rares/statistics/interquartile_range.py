@@ -8,8 +8,8 @@ n, *data = list(map(int, sys.stdin.read().split()))
 nums, freqs = data[:n], data[n:]
 
 n = sum(freqs)
-nums = sorted(list(chain.from_iterable((num,) * freq 
-                                       for num, freq 
+nums = sorted(list(chain.from_iterable((num,) * freq
+                                       for num, freq
                                        in zip(nums, freqs))))
 
 q2 = median(nums)

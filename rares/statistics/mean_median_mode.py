@@ -15,8 +15,8 @@ median = (nums[n // 2]
 
 freqs = Counter(nums)
 max_freq = max(freqs.values())
-mode = min(val 
-           for val, freq 
+mode = min(val
+           for val, freq
            in freqs.items()
            if freq == max_freq)
 
