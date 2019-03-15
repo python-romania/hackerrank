@@ -1,0 +1,13 @@
+09-May-19 23:07:24 - INFO - Displaying menu choices for user prompt
+09-May-19 23:07:24 - INFO - 0. Add two numbers
+09-May-19 23:07:24 - INFO - 1. Subtract two numbers
+09-May-19 23:07:24 - INFO - 2. Multiply two numbers
+09-May-19 23:07:24 - INFO - 3. Divide two numbers
+09-May-19 23:07:24 - INFO - 4. Square
+09-May-19 23:07:24 - INFO - 5. Square root
+09-May-19 23:07:24 - INFO - 6. First order linear differential equation
+09-May-19 23:07:26 - INFO - User choice: 6
+09-May-19 23:07:33 - INFO - Enter linear equation with X: x*x*x
+09-May-19 23:07:33 - INFO - Value of X: 3
+09-May-19 23:07:33 - INFO - y=27
+09-May-19 23:07:39 - INFO - User is exiting due to choice of Exit.
