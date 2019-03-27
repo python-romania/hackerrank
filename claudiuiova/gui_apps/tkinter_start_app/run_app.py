@@ -1,6 +1,6 @@
 import tkinter as tk
 import functools
-from hackerrank.claudiuiova.gui_apps.utils.get_words import Words
+from claudiuiova.gui_apps.utils.get_words import Words
 from tkinter.messagebox import showerror
 
 
