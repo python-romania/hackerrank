@@ -19,6 +19,7 @@ def getMoneySpent(keyboards, drives, b):
         return max(list(x for x in combinations_sum if x <= b))
 
 
+print("Something")
 
 if __name__ == '__main__':
     bnm = "10 2 3".split()
