@@ -1,26 +1,29 @@
 #!/bin/python3
 
-N = int(input())
+number_input = int(input())
 
-def check_constraints(N):
-    if N >=1 and N <= 100:
+
+def check_constraints(number):
+    if number in range(1, 101):
         return True
     else:
         return False
 
 
-def is_it_weird(N):
-    if N % 2 is 1:
+def is_it_weird(number):
+    if number % 2 is 1:
         print("Weird")
-    elif N % 2 is 0 and N >= 2 and N <= 5:
+    elif number % 2 is 0 and number in range(2, 6):
         print("Not Weird")
-    elif N % 2 is 0 and N >= 6 and N <= 20:
+    elif number % 2 is 0 and number in range(6, 21):
         print("Weird")
-    elif N % 2 is 0 and N > 20:
+    elif number % 2 is 0 and check_constraints(number) is True:
         print("Not Weird")
 
-if check_constraints(N) is True:
-    is_it_weird(N)
-else:
-    print("Your number needs to be between 0 and 100. Try again")
-    N = int(input())
+
+if __name__ == '__main__':
+    if check_constraints(number_input) is True:
+        is_it_weird(number_input)
+    else:
+        print("Your number needs to be between 0 and 100. Try again")
+        number_input = int(input())
