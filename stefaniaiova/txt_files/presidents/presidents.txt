@@ -1,0 +1,4 @@
+Ion Iliescu
+Emil Constantinescu
+Traian Basescu
+Klaus Iohannis

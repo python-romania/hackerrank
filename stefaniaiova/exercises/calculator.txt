@@ -1,0 +1,75 @@
+Menu of operations:
+1. Addition
+2. Subtract
+3. Multiply
+4. Division
+5. Square
+6. Square_root
+7. Linear equation 1
+8. Bye!
+Insert your choice: 1
+You choose addition operation.
+Insert the first number: 34
+Insert the second number: 2
+36
+Insert your choice: 2
+You choose subtract operation.
+Insert the first number: 35
+Insert the second number: 5
+30
+Insert your choice: 3
+You choose multiply operation.
+Insert the first number: 12
+Insert the second number: 4
+48
+Insert your choice: 4
+You choose division operation.
+Insert first number: 54
+Insert the second number: 65
+0.8307692307692308
+Insert your choice: 5
+You choose square operation.
+Insert the first number: 4
+Insert the second number: 8
+65536
+Bye!
+================================================
+Menu of operations:
+1. Addition
+2. Subtract
+3. Multiply
+4. Division
+5. Square
+6. Square_root
+7. Linear equation 1
+8. Bye!
+Menu of operations:
+1. Addition
+2. Subtract
+3. Multiply
+4. Division
+5. Square
+6. Square_root
+7. Linear equation 1
+8. Bye!
+Menu of operations:
+1. Addition
+2. Subtract
+3. Multiply
+4. Division
+5. Square
+6. Square_root
+7. Linear equation 1
+8. Bye!
+Insert your choice: 7
+You choose the linear equation 1.
+Insert the first value: 8
+Insert the second value: 4
+Insert the third value: 2
+8x + 4 = 2
+8x = 2 - 4
+x = (2 - 4) / 8
+x = -0.25
+
+Bye!
+================================================
