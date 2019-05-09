@@ -4,6 +4,7 @@ import logging
 
 class Calculator:
 
+    # is_active if True, application is running
     is_active = True
 
     @staticmethod
@@ -28,6 +29,7 @@ class Calculator:
 
     @staticmethod
     def multiply():
+        # Returns: a list of float numbers
         numbers = list(map(float, input('Please enter two numbers to multiply, separated by space: ').split()))
         result = (numbers[0] * numbers[1])
 
@@ -38,6 +40,7 @@ class Calculator:
 
     @staticmethod
     def divide():
+        # Returns: a list of float numbers
         numbers = list(map(float, input('Please enter two numbers to divide, separated by space: ').split()))
         result = (numbers[0] / numbers[1])
 
@@ -48,6 +51,7 @@ class Calculator:
 
     def square(self):
         try:
+            # Returns: a list of float numbers
             numbers = list(map(float, input('Please enter two numbers to square(power), separated by space: ').split()))
             result = (numbers[0] ** numbers[1])
         except IndexError:
@@ -61,7 +65,9 @@ class Calculator:
 
     def square_root(self):
         result = None
+        number = None
         try:
+            # Returns: a float number
             number = float(input('Please enter a number to find the square root: '))
             result = math.sqrt(number)
         except IndexError:
@@ -81,6 +87,7 @@ class Calculator:
         logger.info(f"Value of X: {x}")
         safe_dict['x'] = x
         try:
+            # Returns: eval() of first order linear equation
             y = eval(expression, {"__builtins__": None}, safe_dict)
             print("y={}".format(y))
             logger.info(f"y={y}")
@@ -88,6 +95,7 @@ class Calculator:
             print('Expression not in safe list.')
         self.confirm_continue()
 
+    # User is prompted to continue or exit
     def confirm_continue(self):
         confirm = input('Continue? (Y) or Exit(X), please enter your choise: (Y or X)').upper()
         if confirm == 'Y':
@@ -121,18 +129,23 @@ class Calculator:
             self.linear_eq()
 
 
+# Application only runs if ran from calculator.py
 if __name__ == "__main__":
-
+    """
+    Configuring logger for activity log.
+    """
     logging.basicConfig(filename="calculator_log.txt", filemode="w", level=logging.DEBUG, format="%(asctime)s - %(levelname)s - %(message)s", datefmt='%d-%b-%y %H:%M:%S')
     logger = logging.getLogger(__name__)
 
     # list of safe methods
+    # otherwise malicious code could be entered
     safe_list = ['acos', 'asin', 'atan', 'atan2', 'ceil', 'cos',
                  'cosh', 'degrees', 'e', 'exp', 'fabs', 'floor',
                  'fmod', 'frexp', 'hypot', 'ldexp', 'log', 'log10',
                  'modf', 'pi', 'pow', 'radians', 'sin', 'sinh', 'sqrt',
                  'tan', 'tanh']
 
+    # A dictionary of menu items for the user to chose from
     menu_items = {0: 'Add two numbers', 1: 'Subtract two numbers',
                   2: 'Multiply two numbers', 3: 'Divide two numbers',
                   4: 'Square', 5: 'Square root', 6: 'First order linear differential equation'}
@@ -141,6 +154,8 @@ if __name__ == "__main__":
     safe_dict = dict([(k, locals().get(k, None)) for k in safe_list])
     calculator = Calculator()
 
+    # while is_active = True, the application is running
+    # otherwise, application quits
     while calculator.is_active:
         calculator.menu()
 
