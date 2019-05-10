@@ -130,9 +130,7 @@ class Calculator:
 
 # Application only runs if ran from calculator.py
 if __name__ == "__main__":
-    """
-    Configuring logger for activity log.
-    """
+    # Configuring logger for activity log.
     logging.basicConfig(filename="calculator_log.txt", filemode="w", level=logging.DEBUG, format="%(asctime)s - %(levelname)s - %(message)s", datefmt='%d-%b-%y %H:%M:%S')
     logger = logging.getLogger(__name__)
 
