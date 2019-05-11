@@ -13,6 +13,7 @@ Created on: 10/05/2019 05:57 AM
 """
 
 import time
+import os
 
 
 def introduction():
@@ -158,7 +159,7 @@ def name_file():
     This function will set the file name
     :return: filename
     """
-    return time.strftime("%d-%m-%Y_%I-%M-%S_{}")
+    return time.strftime("%d-%m-%Y_%I-%M-%S")
 
 
 def file_content(option, input1, input2, result):
@@ -187,11 +188,11 @@ def file_content(option, input1, input2, result):
         selected_option = "Square root"
 
     content = """
-    ## {4} ##
-    # Math operation: {0} #
-    # First number: {1}   #
-    # Second Number: {2}  #
-    # Result: {3}         #
+    {4} :
+    # Math operation: {0} 
+    # First number: {1}   
+    # Second Number: {2}  
+    # Result: {3}         
     #######################
     """.format(selected_option, input1, input2, result, title)
 
@@ -251,5 +252,5 @@ def main():
 
 
 if __name__ == '__main__':
-    open("Log.txt", "w")
+    open("Log.txt", "a+")
     main()
