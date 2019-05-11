@@ -158,7 +158,7 @@ def name_file():
     This function will set the file name
     :return: filename
     """
-    return time.strftime("%d-%m-%Y_%I-%M-%S_{}").format("Log.txt")
+    return time.strftime("%d-%m-%Y_%I-%M-%S_{}")
 
 
 def file_content(option, input1, input2, result):
@@ -170,6 +170,9 @@ def file_content(option, input1, input2, result):
     :param result: The math operation result between the two number
     :return:
     """
+	
+    title = name_file()
+	
     if option is '1':
         selected_option = "Addition"
     elif option is '2':
@@ -184,13 +187,13 @@ def file_content(option, input1, input2, result):
         selected_option = "Square root"
 
     content = """
-    #######################
+    ## {4} ##
     # Math operation: {0} #
     # First number: {1}   #
     # Second Number: {2}  #
     # Result: {3}         #
     #######################
-    """.format(selected_option, input1, input2, result)
+    """.format(selected_option, input1, input2, result, title)
 
     return content
 
@@ -238,7 +241,7 @@ def main():
 
     print("Result: " + str(result))
 
-    filename = name_file()
+    filename = "Log.txt"
 
     content = file_content(selected_option, input1, input2, result)
 
@@ -248,4 +251,5 @@ def main():
 
 
 if __name__ == '__main__':
+    open("Log.txt", "w")
     main()
