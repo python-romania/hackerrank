@@ -306,9 +306,12 @@ while True:
             txt_file.write(values2_helper_text + str(values2) + "\n")
             txt_file.write(values3_helper_text + str(values3) + "\n")
             txt_file.write(str(linear_equation_result) + "\n")
-    else:
+    elif user_input == "8":
         with open("calculator.txt", "a") as txt_file:
             bye = "Bye!\n================================================\n"
             print(bye)
             txt_file.write(bye)
         break
+    else:
+        print("Your choice does not exist into the menu. Please insert an available choice!")
+
